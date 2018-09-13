@@ -5,6 +5,9 @@
 # Who Makes My Product?
 A tool that will inform the user which conglomerates makes some of their favorite and most used products. How many of us know that Breyers, an ice cream brand, and Vaseline, a skincare product, share a parent company, Unilever? The majority of the brands we use daily are made by just 10 multinational conglomerates. By using this website, you can find out which companies make your favorite products and more details about each company. If you don’t see a product listed, you are encouraged to add it to its corresponding parent company. Users can favorite their most used products to then directly see which conglomerate  they are benefitting most. 
 
+## deployer site
+http://big-ten.surge.sh/
+
 ## User Stories
 User = average consumer/young investor
 
