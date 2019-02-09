@@ -74,35 +74,35 @@ We imported Bulma for structured templates and then added our own classNames to 
 
 ```javascript
 {/* favorite button */}
-                {/* checking to see if there is a user logged in and if they have favorites. then we check if the current product is in there favorites */}
-                {
-                  this.props.userInfo
-                    &&
-                    this.props.favorites.filter(favorite => favorite.user_id === this.props.userInfo.id)
-                    &&
-                    (this.props.favorites.filter(favorite => favorite.user_id === this.props.userInfo.id).map((idx) => idx.id).includes(product.id))
-                    ?
-                    // display a solid heart button is the current product is in the users favorties  
-                    (<div className="column is-one-seventh"><button className="edit-delete-favorite-button" value={product.id} onClick={((e) => {
-                      e.preventDefault();
-                      // stopPropogation keeps the event from following the click that happens to the entire div
-                      e.stopPropagation();
-                      let currentFavorite = this.props.favorites.filter((favorite) => favorite.id === product.id).filter(favorite => favorite.user_id === this.props.userInfo.id);
-                      this.props.deleteFavorite(currentFavorite[0].favorite_id);
-                    })}><FontAwesomeIcon icon={["fas", "heart"]} /></button></div>)
-                    :
-                    // display a hollow heart button is the current product is not in the users favorties  
-                    (<div className="column is-one-seventh"><button className="edit-delete-favorite-button" value={product.id} onClick={((e) => {
-                      e.preventDefault();
-                      // stopPropogation keeps the event from following the click that happens to the entire div
-                      e.stopPropagation();
-                      this.props.userInfo
-                        ?
-                        this.props.addFavorite({ user_id: this.props.userInfo.id, product_id: product.id })
-                        :
-                        this.props.handleLinks('login page')
-                    })}><FontAwesomeIcon icon={["far", "heart"]} /></button></div>)
-                }
+  {/* checking to see if there is a user logged in and if they have favorites. then we check if the current product is in there favorites */}
+  {
+    this.props.userInfo
+      &&
+      this.props.favorites.filter(favorite => favorite.user_id === this.props.userInfo.id)
+      &&
+      (this.props.favorites.filter(favorite => favorite.user_id === this.props.userInfo.id).map((idx) => idx.id).includes(product.id))
+      ?
+      // display a solid heart button is the current product is in the users favorties  
+      (<div className="column is-one-seventh"><button className="edit-delete-favorite-button" value={product.id} onClick={((e) => {
+        e.preventDefault();
+        // stopPropogation keeps the event from following the click that happens to the entire div
+        e.stopPropagation();
+        let currentFavorite = this.props.favorites.filter((favorite) => favorite.id === product.id).filter(favorite => favorite.user_id === this.props.userInfo.id);
+        this.props.deleteFavorite(currentFavorite[0].favorite_id);
+      })}><FontAwesomeIcon icon={["fas", "heart"]} /></button></div>)
+      :
+      // display a hollow heart button is the current product is not in the users favorties  
+      (<div className="column is-one-seventh"><button className="edit-delete-favorite-button" value={product.id} onClick={((e) => {
+        e.preventDefault();
+        // stopPropogation keeps the event from following the click that happens to the entire div
+        e.stopPropagation();
+        this.props.userInfo
+          ?
+          this.props.addFavorite({ user_id: this.props.userInfo.id, product_id: product.id })
+          :
+          this.props.handleLinks('login page')
+      })}><FontAwesomeIcon icon={["far", "heart"]} /></button></div>)
+  }
 ```
 
 ## Further Description 
